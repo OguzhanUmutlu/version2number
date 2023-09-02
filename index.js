@@ -1,17 +1,17 @@
 module.exports = function (version) {
-    /*** @type {number[]} */
-    const versions = version
-        .replaceAll(/[^\d.|]/g, "")
-        .replaceAll(/[^|]\|/g, m => m[0])
-        .split("||")
+    return Math.max(...version
+        .replaceAll(/[^\d.|]/g, "") // removes unnecessary bytes
+        .replaceAll(/[^|]\|/g, m => m[0]) // removes single | symbols
+        .split("||") // splits version by "||", example: [["1.0.0", "3.0.0"]]
         .map(v => {
-            v = v.split(".");
+            v = v.split("."); // splits the version by a ".", example: ["1", "0", "0"]
             let a = 0;
             for (let i = 0; i < v.length; i++) {
-                a += v[i] * 1 ? v[i] * (10 ** (module.exports.MAX_DIGITS * (2 - i))) : 0;
+                v[i] *= 1;
+                if (!v[i]) continue; // continue with the next if it's 0 or NaN
+                a += v[i] * (10 ** (module.exports.MAX_DIGITS * (2 - i)));
             }
             return a;
-        });
-    return Math.max(...versions);
+        }));
 };
 module.exports.MAX_DIGITS = 2;

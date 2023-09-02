@@ -1,8 +1,8 @@
 {
   "name": "version2number",
-  "version": "1.0.0",
-  "description": "An npm package that converts version string to numbers",
-  "main": "index.js",
+  "version": "1.0.5",
+  "description": "A npm package that converts version string to numbers",
+  "main": "index.min.js",
   "keywords": [
     "version",
     "semver",
