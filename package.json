@@ -1,0 +1,27 @@
+{
+  "name": "version2number",
+  "version": "1.0.0",
+  "description": "An npm package that converts version string to numbers",
+  "main": "index.js",
+  "keywords": [
+    "version",
+    "semver",
+    "semwer",
+    "number",
+    "convert",
+    "integer",
+    "to",
+    "2",
+    "ver"
+  ],
+  "author": "OguzhanUmutlu",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OguzhanUmutlu/version2number.git"
+  },
+  "bugs": {
+    "url": "https://github.com/OguzhanUmutlu/version2number"
+  },
+  "homepage": "https://github.com/OguzhanUmutlu/version2number#readme"
+}
