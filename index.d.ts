@@ -1,2 +1,1 @@
-export let MAX_DIGITS: number;
-export default function (version: string): number;
+export default function (version: string, maxDigits?: number): number;

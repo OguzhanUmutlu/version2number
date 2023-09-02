@@ -1,4 +1,4 @@
-module.exports = function (version) {
+module.exports = function (version, maxDigits = 2) {
     return Math.max(...version
         .replaceAll(/[^\d.|]/g, "") // removes unnecessary bytes
         .replaceAll(/[^|]\|/g, m => m[0]) // removes single | symbols
@@ -9,9 +9,8 @@ module.exports = function (version) {
             for (let i = 0; i < v.length; i++) {
                 v[i] *= 1;
                 if (!v[i]) continue; // continue with the next if it's 0 or NaN
-                a += v[i] * (10 ** (module.exports.MAX_DIGITS * (2 - i)));
+                a += v[i] * (10 ** (maxDigits * (2 - i)));
             }
             return a;
         }));
 };
-module.exports.MAX_DIGITS = 2;
